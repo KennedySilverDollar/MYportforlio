@@ -1,0 +1,42 @@
+source "https://rubygems.org"
+
+# Rails本体
+gem "rails", "~> 8.1.3"
+
+# 【Render本番用】PostgreSQLを使えるようにするジェムを追加
+gem "pg"
+
+# 開発環境用のSQLite
+gem "sqlite3", ">= 2.1"
+
+# Webサーバー
+gem "puma", ">= 5.0"
+
+# Windows用の設定
+gem "tzinfo-data", platforms: %i[ windows jruby ]
+
+# Rails 8以降の基本機能（無料枠のメモリ節約のため、production.rb側でこれらは使わない設定にしています）
+gem "solid_cache"
+gem "solid_queue"
+gem "solid_cable"
+
+# 起動高速化
+gem "bootsnap", require: false
+
+# デプロイ・高速化ツール
+gem "kamal", require: false
+gem "thruster", require: false
+
+# 画像処理用
+gem "image_processing", "~> 1.2"
+
+# 【超重要】React（フロントエンド）からの通信を許可するためにコメントアウトを解除
+gem "rack-cors"
+
+group :development, :test do
+  # デバッグ・セキュリティ・コード整形ツール
+  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem "bundler-audit", require: false
+  gem "brakeman", require: false
+  gem "rubocop-rails-omakase", require: false
+end
