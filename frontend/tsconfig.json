@@ -1,5 +1,4 @@
 {
-  "files": ["app/javascript/entrypoints/application.tsx"],
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -22,8 +21,8 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./app/javascript/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["app/javascript/**/*"]
+  "include": ["src/**/*"]
 }
